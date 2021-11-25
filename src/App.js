@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 function App() {
+
+	const [ searchSuggestion, setSearchSuggestion ] = useState([]);
+
+	useEffect(() => {
+		fetch(`${process.env.REACT_APP_DEEZFLOW_API}/deezer//search?q=nirvana`)
+			.then((response) => response.json())
+			.then((data) => setSearchSuggestion(data.data));
+	}, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>PLOP</h1>
+      <Box>
+      <TextField id="standard-basic" label="Standard" variant="standard" />
+      </Box>
+      {searchSuggestion.map((track)=>
+        <p key={track.id}>{track.id}</p>
+      )}
+
     </div>
   );
 }
