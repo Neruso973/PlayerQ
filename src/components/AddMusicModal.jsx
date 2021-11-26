@@ -45,7 +45,13 @@ export default function AddMusicModal({ onSelection }) {
   return (
     <div>
       <Icon
-        sx={{ position: "fixed", right: 20, bottom: 20, fontSize: "4em" }}
+        sx={{
+          position: "fixed",
+          right: 20,
+          bottom: 20,
+          fontSize: "4em",
+          color: "#a055b0",
+        }}
         onClick={handleOpen}
       >
         add_circle
