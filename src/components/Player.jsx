@@ -24,7 +24,7 @@ const style = {
 	width: 1000,
   height: 400,
 	bgcolor: 'white',
-  opacity: '0.2',
+  opacity: '0.7',
 	border: '2px solid #000',
 	boxShadow: 24,
 	p: 4
