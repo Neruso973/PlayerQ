@@ -14,16 +14,17 @@ import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import BlindtestContext from "../BlindtestContext";
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
   
 const style = {
 	position: 'absolute',
-	top: '50%',
+	top: '74%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	width: 400,
-	bgcolor: 'background.paper',
+	width: 1000,
+  height: 400,
+	bgcolor: 'white',
+  opacity: '0.2',
 	border: '2px solid #000',
 	boxShadow: 24,
 	p: 4
@@ -67,7 +68,6 @@ export default function Player({track, onNext, onPrev}) {
   const {blindtest, handleBlindtest} = useContext(BlindtestContext)
   const [karaoke, setKaraoke] = useState(false)
   const [ open, setOpen ] = useState(false);
-	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
     const currentTrack = useRef();
@@ -114,7 +114,7 @@ const handleKaraoke = () => {
         <>
         <h2 style={{fontSize: "2em"}}>Musique en cours</h2>
         <FormControlLabel control={ <Switch onChange={handleBlindtest} />} label="Blindtest" sx={{position: "fixed", top: 12, left: 5}}/>
-        <FormControlLabel control={ <Switch onChange={handleKaraoke} />} label="Karaoke" sx={{position: "fixed", top: 45, left: 5}}/>
+        <FormControlLabel control={ <Switch onChange={handleKaraoke} checked={karaoke}/>} label="Karaoke" sx={{position: "fixed", top: 45, left: 5}}/>
          <Box sx={{ width: '100%', overflow: 'hidden' }}>
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -136,7 +136,7 @@ const handleKaraoke = () => {
         <Slider
           aria-label="time-indicator"
           size="small"
-          value={position}
+          value={0}
           min={0}
           step={1}
           max={duration}

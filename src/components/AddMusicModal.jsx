@@ -72,7 +72,8 @@ export default function AddMusicModal({ onSelection }) {
 											margin: 2,
 											alignItems: 'center',
 											borderRadius: 50,
-											background: 'yellow'
+											background: '#750ff7',
+											color: 'white'
 										}
 									) : (
 										{
@@ -80,7 +81,7 @@ export default function AddMusicModal({ onSelection }) {
 											margin: 2,
 											alignItems: 'center',
 											borderRadius: 50,
-											background: 'red'
+											background: 'white'
 										}
 									)
 								}
