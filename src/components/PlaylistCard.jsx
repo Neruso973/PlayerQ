@@ -14,7 +14,7 @@ export default function PlaylistCard({ track, onAddVote }) {
 	return (
 		<Card sx={{ display: 'flex', width: '30%', borderRadius: "12px", margin: "10px" }}>
 			<CardMedia component="img" sx={{ width: 151, borderRadius: "12px" }} image={blindtest?null:track.cover} alt="???" />
-			<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+			<Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
 				<CardContent sx={{ flex: '1 0 auto' }}>
 					<Typography component="div" variant="h5">
 						{blindtest? "???" : track.title}
@@ -23,7 +23,6 @@ export default function PlaylistCard({ track, onAddVote }) {
           {blindtest? "???" :track.artist}
 					</Typography>
 					<Icon sx={{fontSize:"3em"}} onClick={() => onAddVote(track)}>add_circle</Icon>
-					<Typography>{track.vote}</Typography>
 				</CardContent>
 				<Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }} />
 			</Box>

@@ -5,6 +5,7 @@ import AddMusicModal from './components/AddMusicModal';
 import { useState } from 'react';
 import BlindtestContextProvider from './BlindtestContextProvider';
 import { styled } from '@mui/material/styles';
+import ScrollTop from './components/ScrollTop';
 
 
 const WallPaper = styled('div')({
@@ -73,6 +74,7 @@ function App() {
 			<Player track={queueList[currentTrackIndex]} onNext={onNextTrack} onPrev={onPreviousTrack} />
 			<Playlist queueList={queueList} onAddVote={addVote} />
 			<AddMusicModal onSelection={onPlaylistSelected} />
+      <ScrollTop />
 			<WallPaper sx={{zIndex:-1}} />
 		</div>
     </BlindtestContextProvider>

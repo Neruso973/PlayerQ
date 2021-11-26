@@ -113,8 +113,8 @@ const handleKaraoke = () => {
     return (
         <>
         <h2 style={{fontSize: "2em"}}>Musique en cours</h2>
-        <FormControlLabel control={ <Switch onChange={handleBlindtest} />} label="Blindtest" sx={{position: "fixed", top: 12, left: 5}}/>
-        <FormControlLabel control={ <Switch onChange={handleKaraoke} />} label="Karaoke" sx={{position: "fixed", top: 45, left: 5}}/>
+        <FormControlLabel control={ <Switch onChange={handleBlindtest} />} label="Blindtest" sx={{position: "fixed", top: 12, left: 10}}/>
+        <FormControlLabel control={ <Switch onChange={handleKaraoke} />} label="Karaoke" sx={{position: "fixed", top: 45, left: 10}}/>
          <Box sx={{ width: '100%', overflow: 'hidden' }}>
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
